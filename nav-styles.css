@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --clr: #222327;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--clr);
+}
+.navigation{
+    position: fixed;
+    width: 80px;
+    height: 400px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 25px;
+    left: 2vw;
+    top: 8vh;
+}
+.navigation ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 400px;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+.navigation ul li.active a .icon{
+    transform: translateX(32.5px);
+}
+.navigation ul li a .text{
+    position: absolute;
+    color: var(--clr);
+    font-weight: 500;
+    font-size: .0.85em;
+    letter-spacing: -0.3em;
+    transition: 0.5s;
+    opacity: 0;
+    transform:  translateY(-5px) translateX(-20px);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+.navigation ul li.active a .text{
+    opacity: 1;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+.indicator{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    background-color: #29fd53;
+    border-radius: 50%;
+    border: 6px solid var(--clr);
+    transition: 0.5s;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator{
+    transform: translateY(22.5px);
+}
+.navigation ul li:nth-child(2).active ~ .indicator{
+    transform: translateY(117px);
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+    transform: translateY(211px);
+}
+.navigation ul li:nth-child(4).active ~ .indicator{
+    transform: translateY(302.5px);
+}
